@@ -1,0 +1,27 @@
+let appendTypes = (types) => {
+let typess = document.querySelectorAll(".types");
+types.forEach((item) => {
+typess.forEach((el) => {
+let span = document.createElement("span");
+span.textContent = item.type.name;
+el.appendChild(span);
+});
+});
+};
+let styleCard = (color) => {
+let $cards = document.querySelectorAll(".cards");
+
+                $cards.forEach((el) => {
+                  el.style.background = `radial-gradient(circle at 50% 0%, ${color} 36%, #ffffff 36%)`;
+                  el.querySelectorAll(".types span").forEach((typeColor) => {
+                    typeColor.style.backgroundColor = color;
+                  });
+                });
+              };
+
+              // setTimeout(function () {
+              //   appendTypes(pokemon.types);
+              //   styleCard(themeColor);
+              // }, 3000);
+
+              $main.innerHTML = `<img class ="loader" src ="./images/spinning-circles.svg" alt="cargando...">`;
